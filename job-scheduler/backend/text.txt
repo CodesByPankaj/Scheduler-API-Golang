@@ -1,0 +1,23 @@
+
+
+mkdir job-scheduler
+cd job-scheduler
+
+
+
+go mod init job-scheduler
+
+
+go get -u github.com/gorilla/mux
+go get -u github.com/gorilla/websocket
+
+
+go run main.go
+
+Submit a New Job:
+
+You can use curl or a tool like Postman to submit a new job.
+curl -X POST http://localhost:8080/jobs -H "Content-Type: application/json" -d '{"name": "Job1", "duration": 5}'
+
+Retrieve Job List:
+curl http://localhost:8080/jobs
